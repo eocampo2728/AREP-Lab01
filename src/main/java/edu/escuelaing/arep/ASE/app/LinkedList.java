@@ -7,13 +7,37 @@ import java.util.ListIterator;
 
 public class LinkedList implements List {
 
+    private int size;
+    private Node head;
+    private Node position;
+
+    public LinkedList(){
+        this.size = 0;
+        this.head = null;
+    }
+
+    private static class Node<AnyType> {
+        private AnyType data;
+        private Node<AnyType> next;
+        private Node<AnyType> prior;
+
+        public Node(AnyType data, Node<AnyType> next, Node<AnyType> prior) {
+            this.data = data;
+            this.next = next;
+            this.prior = prior;
+        }
+    }
 
     public int size() {
-        return 0;
+        return size;
     }
 
     public boolean isEmpty() {
-        return false;
+        if (size == 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public boolean contains(Object o) {
@@ -93,20 +117,10 @@ public class LinkedList implements List {
     }
 
     public boolean containsAll(Collection c) {
-        return false;
+        return false;+
     }
 
     public Object[] toArray(Object[] a) {
         return new Object[0];
-    }
-
-    private static class Node<AnyType> {
-        private AnyType data;
-        private Node<AnyType> next;
-
-        public Node(AnyType data, Node<AnyType> next) {
-            this.data = data;
-            this.next = next;
-        }
     }
 }
