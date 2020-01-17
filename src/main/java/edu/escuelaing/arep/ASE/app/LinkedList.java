@@ -8,12 +8,13 @@ import java.util.ListIterator;
 public class LinkedList implements List {
 
     private int size;
-    private Node head;
-    private Node position;
+    private Node first;
+    private Node last;
 
     public LinkedList(){
         this.size = 0;
-        this.head = null;
+        first = null;
+        last = null;
     }
 
     private static class Node<AnyType> {
@@ -21,10 +22,27 @@ public class LinkedList implements List {
         private Node<AnyType> next;
         private Node<AnyType> prior;
 
-        public Node(AnyType data, Node<AnyType> next, Node<AnyType> prior) {
+        public Node(AnyType data, Node<AnyType> prior) {
             this.data = data;
-            this.next = next;
+            this.next = null;
             this.prior = prior;
+        }
+    }
+
+    public boolean add(Object o) {
+        Node newNode;
+        if (size == 0){
+            newNode = new Node(o,null);
+            first = newNode;
+            last = newNode;
+            size =+ 1;
+            return true;
+        }else{
+            newNode = new Node(o,last);
+            last.next = newNode;
+            last = newNode;
+            size =+ 1;
+            return true;
         }
     }
 
@@ -50,10 +68,6 @@ public class LinkedList implements List {
 
     public Object[] toArray() {
         return new Object[0];
-    }
-
-    public boolean add(Object o) {
-        return false;
     }
 
     public boolean remove(Object o) {
