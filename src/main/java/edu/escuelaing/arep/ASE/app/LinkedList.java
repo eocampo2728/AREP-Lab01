@@ -87,7 +87,13 @@ public class LinkedList implements List {
     }
 
     public Object get(int index) {
-        return null;
+        Node answer = first;
+        for (int i = 0; i < index; i++) {
+            if (i != 0){
+                answer = answer.next;
+            }
+        }
+        return answer.data;
     }
 
     public Object set(int index, Object element) {
@@ -107,7 +113,7 @@ public class LinkedList implements List {
     }
 
     public int lastIndexOf(Object o) {
-        return 0;
+        return size - 1;
     }
 
     public ListIterator listIterator() {
