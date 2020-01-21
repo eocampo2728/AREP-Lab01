@@ -137,7 +137,7 @@ public class LinkedList implements List {
     }
 
     public boolean containsAll(Collection c) {
-        return false;+
+        return false;
     }
 
     public Object[] toArray(Object[] a) {
