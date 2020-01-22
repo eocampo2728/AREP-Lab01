@@ -41,13 +41,13 @@ public class LinkedList implements List {
             newNode = new Node(o,last);
             last.next = newNode;
             last = newNode;
-            size =+ 1;
+            this.size = this.size + 1;
             return true;
         }
     }
 
     public int size() {
-        return size;
+        return this.size;
     }
 
     public boolean isEmpty() {
@@ -89,9 +89,7 @@ public class LinkedList implements List {
     public Object get(int index) {
         Node answer = first;
         for (int i = 0; i < index; i++) {
-            if (i != 0){
-                answer = answer.next;
-            }
+            answer = answer.next;
         }
         return answer.data;
     }
@@ -142,5 +140,18 @@ public class LinkedList implements List {
 
     public Object[] toArray(Object[] a) {
         return new Object[0];
+    }
+    
+    public boolean equals(LinkedList list){
+        if (this.size() == list.size()){
+            for (int i = 0; i < this.size(); i++){
+                if(this.get(i) != list.get(i)){
+                    return false;
+                }
+            }
+            return true;
+        }else{            
+            return false;
+        }
     }
 }
