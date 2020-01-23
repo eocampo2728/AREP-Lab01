@@ -1,7 +1,5 @@
 package edu.escuelaing.arep.ASE.app;
 
-
-
 import static org.junit.Assert.*;
 
 import edu.escuelaing.arep.ASE.app.Calculator;
@@ -9,6 +7,10 @@ import edu.escuelaing.arep.ASE.app.LinkedList;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Test for the calculator class.
+ * @author eduardo.ocampo
+ */
 
 public class CalculatorTest {
     
@@ -51,7 +53,7 @@ public class CalculatorTest {
     
     @Test
     public void shouldCalculateStandardDeviation1() {
-        Double target = 542.67;
+        Double target = 572.03;
         LinkedList list = new LinkedList();
         list.add(160);
         list.add(591);
@@ -69,7 +71,7 @@ public class CalculatorTest {
     
     @Test
     public void shouldCalculateStandardDeviation2() {
-        Double target = 59.06;
+        Double target = 62.26;
         LinkedList list = new LinkedList();
         list.add(15.0);
         list.add(69.9);

@@ -5,23 +5,39 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+/**
+ * Implementation of LinkedList
+ * @author eduardo.ocampo
+ */
 public class LinkedList implements List {
 
     private int size;
     private Node first;
     private Node last;
-
+    
+    
+    /**
+     * This is the constructor of the class LinkedList
+     */
     public LinkedList(){
         this.size = 0;
         first = null;
         last = null;
     }
-
+    
+    /**
+     * Class Node used by the LinkedList.
+     */
     private static class Node<AnyType> {
         private AnyType data;
         private Node<AnyType> next;
         private Node<AnyType> prior;
-
+        
+        /**
+         * This is the constructor of the class Node
+         * @param data Data of the node of the linkedlist.
+         * @param prior Last node created.
+         */
         public Node(AnyType data, Node<AnyType> prior) {
             this.data = data;
             this.next = null;
@@ -29,6 +45,11 @@ public class LinkedList implements List {
         }
     }
 
+    /**
+     * This method add a node to a LinkedList.
+     * @param o This object is the actual value of the node
+     * @return if the add was performed.
+     */
     public boolean add(Object o) {
         Node newNode;
         if (size == 0){
@@ -46,10 +67,18 @@ public class LinkedList implements List {
         }
     }
 
+    /**
+     * This method give the size of the linkedList
+     * @return Size of the list.
+     */
     public int size() {
         return this.size;
     }
-
+    
+    /**
+     * This method tell if the list is empty
+     * @return a boolean that tell if the list is empty.
+     */
     public boolean isEmpty() {
         if (size == 0){
             return true;
@@ -85,7 +114,12 @@ public class LinkedList implements List {
     public void clear() {
 
     }
-
+    
+    /**
+     * This method get a value of a node in an exact index
+     * @param index The place of the value want to get
+     * @return The value that correspond to the index
+     */
     public Object get(int index) {
         Node answer = first;
         for (int i = 0; i < index; i++) {
@@ -142,6 +176,11 @@ public class LinkedList implements List {
         return new Object[0];
     }
     
+    /**
+     * This method is used to compare between 2 LinkedList and see if they are equal.
+     * @param list The list that want to compare
+     * @return A boolean that represent if both of the lists are equal.
+     */
     public boolean equals(LinkedList list){
         if (this.size() == list.size()){
             for (int i = 0; i < this.size(); i++){
