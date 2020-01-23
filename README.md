@@ -4,6 +4,7 @@
 Este programa es una implementacion de una LinkedList compatible con la clase List de java y permite calcular la media y desviacion estandar de un grupo de numeros.
 
 Esta implementacion de LinkedList tiene para calcular variables estadisticas utilizando LinkedList
+
 La calculadora contiene las sigueientes operaciones:
 
   1. Media
