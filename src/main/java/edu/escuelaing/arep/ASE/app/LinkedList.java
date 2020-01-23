@@ -152,6 +152,6 @@ public class LinkedList implements List {
             return true;
         }else{            
             return false;
-        }
+        } 
     }
 }

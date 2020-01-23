@@ -16,11 +16,13 @@ public class Calculator {
         double mean = mean(elements);
         double ans = 0;
         for (int i = 0; i < elements.size(); i++){
-            ans += (new Double(elements.get(i).toString()) - mean) * (new Double(elements.get(i).toString()) - mean);
+
+            ans += Math.pow((new Double(elements.get(i).toString()) - mean) , 2 );
+            
         }
-        ans = ans / (elements.size() - 1);        
+        ans = Math.sqrt(ans / elements.size() );
         ans = Math.round(ans * 100.0) / 100.0;
-        System.out.println(ans);
+        
         return ans;
     }
 }

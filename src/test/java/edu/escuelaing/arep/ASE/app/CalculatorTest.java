@@ -50,8 +50,8 @@ public class CalculatorTest {
     }
     
     @Test
-    public void shouldCalculateStandardDeviation() {
-        Double target = 60.32;
+    public void shouldCalculateStandardDeviation1() {
+        Double target = 542.67;
         LinkedList list = new LinkedList();
         list.add(160);
         list.add(591);
@@ -63,6 +63,24 @@ public class CalculatorTest {
         list.add(1657);
         list.add(624);
         list.add(1503);
+
+        assertTrue(target == Calculator.standardDeviation(list));
+    }
+    
+    @Test
+    public void shouldCalculateStandardDeviation2() {
+        Double target = 59.06;
+        LinkedList list = new LinkedList();
+        list.add(15.0);
+        list.add(69.9);
+        list.add(6.5);
+        list.add(22.4);
+        list.add(28.4);
+        list.add(65.9);
+        list.add(19.4);
+        list.add(198.7);
+        list.add(38.8);
+        list.add(138.2);
 
         assertTrue(target == Calculator.standardDeviation(list));
     }
